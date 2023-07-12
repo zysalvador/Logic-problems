@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Practice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String basic, fortran, pascal, container;
+        float grade1, grade2, grade3;
+        float sumBasic = 0, sumFortran = 0, sumPascal = 0;
+        float averageBasic = 0, averageFortran = 0, averagePascal = 0;
+
+        System.out.print("Enter the number of students in the classroom: ");
+        int numStudents = sc.nextInt();
+
+        System.out.print("Enter the number of subjects/courses: ");
+        int numSubjects = sc.nextInt();
+        sc.nextLine(); // Consume the newline character after reading the number of subjects
+
+        for (int i = 0; i < numSubjects; i++) {
+            System.out.print("Choose a subject and then assign grades accordingly. The available subjects are BASIC, FORTRAN, and PASCAL: ");
+            container = sc.nextLine();
+
+            switch (container) {
+                case "BASIC":
+                    for (int b = 0; b < numStudents; b++) {
+                        System.out.print("Enter the grade for Student " + (b + 1) + " in the subject BASIC: ");
+                        grade1 = sc.nextFloat();
+                        sumBasic += grade1;
+                    }
+                    sc.nextLine(); // Consume the newline character after reading the grade
+                    break;
+
+                case "FORTRAN":
+                    for (int f = 0; f < numStudents; f++) {
+                        System.out.print("Enter the grade for Student " + (f + 1) + " in the subject FORTRAN: ");
+                        grade2 = sc.nextFloat();
+                        sumFortran += grade2;
+                    }
+                    sc.nextLine(); // Consume the newline character after reading the grade
+                    break;
+
+                case "PASCAL":
+                    for (int p = 0; p < numStudents; p++) {
+                        System.out.print("Enter the grade for Student " + (p + 1) + " in the subject PASCAL: ");
+                        grade3 = sc.nextFloat();
+                        sumPascal += grade3;
+                    }
+                    sc.nextLine(); // Consume the newline character after reading the grade
+                    break;
+
+                default:
+                    System.out.println("Invalid subject.");
+                    break;
+            }
+        }
+
+        averageBasic = sumBasic / numStudents;
+        averageFortran = sumFortran / numStudents;
+        averagePascal = sumPascal / numStudents;
+        
+        System.out.print("Number of students for the subject BASIC is " + numStudents + ", and their average grade is: " + averageBasic);
+        System.out.print("Number of students for the subject FORTRAN is " + numStudents + ", and their average grade is: " + averageFortran);
+        System.out.println("Number of students for the subject PASCAL is " + numStudents + ", and their average grade is: " + averagePascal);
+
+        float totalAverage = (averageBasic + averageFortran + averagePascal) / 3;
+        System.out.println("Total average of the classroom: " + totalAverage);
+    }
+}
