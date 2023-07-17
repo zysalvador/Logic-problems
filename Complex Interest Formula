@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Practice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the amount of Capital (C): ");
+        double capital = sc.nextDouble();
+
+        // The interest rate is 0.5% per year
+        double interestRate = 0.005;
+
+        double doubledCapital = capital * 2;
+
+        double t = Math.log(doubledCapital / capital) / Math.log(1 + interestRate);
+
+        if (t <= 2) {
+            System.out.print("The capital will double in " + t + " years.");
+        } else {
+            System.out.print("The capital will not double in two years.");
+        }
+    }
+}
+
+
+NOTE : In this section, you will see how to calculate the time it takes for a given capital to double at a specified interest rate.
