@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    Scanner sc = new Scanner(System.in);
+    int dividend;
+    int quotient;
+    int remainder;
+    int divisor;
+
+    public void findGreaterSmaller(int a, int b) {
+        if (a > b) {
+            dividend = a;
+            divisor = b;
+        } else {
+            dividend = b;
+            divisor = a;
+        }
+    }
+
+    public static void main(String[] args) {
+        Main main = new Main();
+
+        System.out.print("Enter the first number: ");
+        int a = main.sc.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int b = main.sc.nextInt();
+
+        main.findGreaterSmaller(a, b);
+        do 
+        {
+            main.quotient = main.dividend / main.divisor;
+            main.remainder = main.dividend - (main.divisor * main.quotient);
+            main.dividend = main.divisor;
+            main.divisor = main.remainder;
+        } while (main.remainder != 0);
+        
+        System.out.println("Dividend: " + main.dividend);
+        System.out.println("Divisor: " + main.divisor);
+        System.out.println("The G.C.D is: " + main.dividend);
+        System.out.println("The remainder is: " + main.remainder);
+    }
+}
