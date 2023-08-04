@@ -4,7 +4,7 @@ public class Main
     public static void main(String[] args) 
     {
         String p = "Cat";
-        String a = "The Daily Bite";
+        String a = "Bite";
         String b = "Civic";
         char result,result2,result3;
 
