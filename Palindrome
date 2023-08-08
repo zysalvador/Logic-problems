@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main 
+{
+	public static void main (String []args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the word you want to check for palindrome: "); 
+
+// PLEASE NOTE : The words have to be written with no space in order the algorithm can read it perfectly.
+
+		String word = sc.nextLine();
+        boolean isPalindrome = isPalindrome(word);
+        System.out.print(isPalindrome);
+	}
+	
+	public static boolean isPalindrome(String word) 
+	{
+		for (int v = 0, j = word.length() - 1; v <= j; j--, v++) 
+		{
+			if (word.charAt(v) != word.charAt(j)) 
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+}
