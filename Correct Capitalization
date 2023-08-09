@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main 
+{
+	public static boolean isCapitalizationCorrect(String word) 
+	{
+		if (word.equals(word.toUpperCase()) || word.equals(word.toLowerCase()) ||  Character.isUpperCase(word.charAt(0)))  
+		{
+			return true;
+		}
+		return false; // This is the method used to determine if a letter is correctly capitalized or in lowercase.
+	}
+	public static void main(String[] args) 
+	{
+		int v = 0;
+		while (v < 4) // This part can be modified according to personal preference. What really matters is the method that was used.
+		{
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter a word to determine if its capitalization is correct:");
+			String word = sc.nextLine();
+			boolean capitalizationCorrect = isCapitalizationCorrect(word);
+			System.out.println(capitalizationCorrect);
+			v++;
+		}
+	}
+}
