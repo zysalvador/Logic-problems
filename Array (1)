@@ -1,4 +1,4 @@
-/// Obtain the average height. Count how many people are taller than the average and how many are shorter.
+/// Define a vector of 5 components of type float representing the heights of 5 people. Obtain the average height. Count how many people are taller than the average and how many are shorter.
 
 
 
