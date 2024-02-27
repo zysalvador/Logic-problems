@@ -1,65 +1,63 @@
 /// Define a vector of 5 components of type float representing the heights of 5 people. Obtain the average height. Count how many people are taller than the average and how many are shorter.
 
-
-
 import java.util.Scanner;
 
 public class Practice
 {
-	private float [] alturas;
-	private Scanner tc;
-	private float promedio;
+	private float [] heights;
+	private Scanner sc;
+	private float average;
 	
-	private void Obtener() 
+	private void getHeights() 
 	{
-	   alturas = new float [5];
-	   tc= new Scanner (System.in);
+	   heights = new float [5];
+	   sc = new Scanner (System.in);
 	   for (int x = 0; x < 5; x++ ) 
 	   {
-		   System.out.print("Write the "+ x +"number of the people height: ");
-		   alturas [x] = tc.nextFloat();
+		   System.out.print("Enter the height of person " + (x+1) + ": ");
+		   heights[x] = sc.nextFloat();
 	   }
 	} 
 	
-	private void Promedio () 
+	private void calculateAverage() 
 	{
-		float suma;
-		suma = 0;
+		float sum;
+		sum = 0;
 		for (int v = 0; v<5; v++ ) 
 		{
-			suma = suma + alturas [v];
+			sum = sum + heights[v];
 		}
-		promedio = suma/5;
-		System.out.print("Promedio es " + promedio);
+		average = sum/5;
+		System.out.print("Average height is " + average);
 	}
 	
-	private void Imprimir () 
+	private void printResults() 
 	{
-		int altas, bajas;
-		altas = 0;
-		bajas = 0;
+		int above, below;
+		above = 0;
+		below = 0;
 		for (int v = 0; v<5; v++) 
 		{
-			if (alturas[v]>promedio) 
+			if (heights[v]>average) 
 			{
-				altas ++;
-			}else {} if (alturas[v]<promedio) 
+				above ++;
+			}else {} if (heights[v]<average) 
 			{
-				bajas ++ ;
+				below ++ ;
 			}
 		}
-	    System.out.println("Cantidad de personas mayores al promedio:"+altas);
-	    System.out.println("Cantidad de personas menores al promedio:"+bajas);
+	    System.out.println("Number of people taller than the average:"+above);
+	    System.out.println("Number of people shorter than the average:"+below);
 	}
-	private void ejecutar () 
+	private void execute () 
 	{
-		Obtener ();
-		Promedio ();
-		Imprimir ();
+		getHeights();
+		calculateAverage();
+		printResults();
 	}
 	public static void main (String []args) 
 	{
 		Practice pr = new Practice ();
-		pr.ejecutar();
+		pr.execute();
 	}
 }
