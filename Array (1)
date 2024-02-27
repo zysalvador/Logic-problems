@@ -1,0 +1,66 @@
+/// Definir un vector de 5 componentes de tipo float que representen las alturas de 5 personas.
+Obtener el promedio de las mismas. Contar cuántas personas son más altas que el promedio y cuántas más bajas.
+
+
+
+import java.util.Scanner;
+
+public class Practice
+{
+	private float [] alturas;
+	private Scanner tc;
+	private float promedio;
+	
+	private void Obtener() 
+	{
+	   alturas = new float [5];
+	   tc= new Scanner (System.in);
+	   for (int x = 0; x < 5; x++ ) 
+	   {
+		   System.out.print("Write the "+ x +"number of the people height: ");
+		   alturas [x] = tc.nextFloat();
+	   }
+	} 
+	
+	private void Promedio () 
+	{
+		float suma;
+		suma = 0;
+		for (int v = 0; v<5; v++ ) 
+		{
+			suma = suma + alturas [v];
+		}
+		promedio = suma/5;
+		System.out.print("Promedio es " + promedio);
+	}
+	
+	private void Imprimir () 
+	{
+		int altas, bajas;
+		altas = 0;
+		bajas = 0;
+		for (int v = 0; v<5; v++) 
+		{
+			if (alturas[v]>promedio) 
+			{
+				altas ++;
+			}else {} if (alturas[v]<promedio) 
+			{
+				bajas ++ ;
+			}
+		}
+	    System.out.println("Cantidad de personas mayores al promedio:"+altas);
+	    System.out.println("Cantidad de personas menores al promedio:"+bajas);
+	}
+	private void ejecutar () 
+	{
+		Obtener ();
+		Promedio ();
+		Imprimir ();
+	}
+	public static void main (String []args) 
+	{
+		Practice pr = new Practice ();
+		pr.ejecutar();
+	}
+}
