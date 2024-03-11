@@ -1,0 +1,84 @@
+Develop a program that allows entering an array of 8 elements and report:
+
+The accumulated value of all elements in the array.
+The accumulated value of elements in the array that are greater than 36.
+The quantity of values greater than 50.
+
+
+
+Solution:
+
+
+import java.util.*;
+
+public class Practice 
+{
+	private Scanner teclado;
+	private int [] elementos;
+	private int acumulado1, sum1, sum2, sum3, acumulado2, acumulado3;
+	
+	public void inputData ()
+	{
+		elementos = new int [8];
+		Scanner teclado = new Scanner (System.in);
+		
+		for (int x = 0; x < 8; x++)
+		{
+			System.out.print("Enter the values:");
+			elementos [x] = teclado.nextInt();
+			
+		}
+	}
+	
+	public void accumulate()
+	{
+		acumulado1 = 0;
+		sum1 = 0;
+		for (int x = 0; x < 8; x++)
+		{
+			sum1++;
+			acumulado1 = acumulado1 + elementos[x];
+		}
+	}
+	
+	public void greaterThan36() 
+	{
+		for(int x = 0; x < 8; x++)
+		{
+			if (elementos[x] > 36)
+			{
+				acumulado2 = acumulado2 + elementos[x];
+				sum2++;
+			}
+		}
+	}
+	
+	public void greaterThan50() 
+	{
+		for(int x = 0; x < 8; x++)
+		{
+			if (elementos[x] > 50)
+			{
+				acumulado3 = acumulado3 + elementos[x];
+				sum3++;
+			}
+		}
+	}
+	
+	public void print () 
+	{
+		 System.out.println("Accumulated sum of all elements: " + acumulado1 + ", number of elements added: " + sum1);
+	        System.out.println("Accumulated sum of elements greater than 36: " + acumulado2 + ", number of elements added: " + sum2);
+	        System.out.println("Number of values greater than 50: " + acumulado3 + ", number of elements added: " + sum3);
+	}
+	
+	public static void main (String []args)
+	{
+		Practice pv = new Practice ();
+		pv.inputData();
+		pv.accumulate();
+		pv.greaterThan36();
+		pv.greaterThan50();
+		pv.print();
+	}
+}
