@@ -1,0 +1,63 @@
+import java.util.*;
+
+public class Practice 
+{
+	private Scanner teclado;
+	private float [] courseA;
+	private float [] courseB;
+	
+	public void inputData ( ) 
+	{
+		teclado=new Scanner(System.in);
+		courseA =new float[5];
+		courseB =new float[5];
+		System.out.println("Enter the grades of the 5 students in Course A");
+		for (int x=0;x<5;x++) 
+		{
+			System.out.print("Student ["+ x+"] :");
+			courseA[x]=teclado.nextFloat();
+		}
+		System.out.println("Enter the grades of the 5 students in Course B");
+		for (int x=0;x<5;x++) 
+		{
+			System.out.print("Student ["+ x+"] :");
+			courseB[x]=teclado.nextFloat();
+		}
+		
+	}
+	
+	public void calculateAverage () 
+	{
+		float sum1 = 0;
+		float sum2 = 0;
+		for (int x=0;x<5;x++) 
+		{
+			sum1+=courseA[x];
+		}
+		for (int x=0;x<5;x++) 
+		{
+			sum2+=courseB[x];
+		}
+		
+		float average1=0;
+		float average2=0;
+		average1= sum1/5;
+		average2= sum2/5;
+		
+		if (average1<average2) 
+		{
+			System.out.print("Course A has a higher general average");
+		} 
+		else
+		{
+			System.out.print("Course B has a higher general average");
+		}
+	}
+	
+	public static void main (String[]args) 
+	{
+		Practice pv= new Practice();
+		pv.inputData();
+		pv.calculateAverage();
+	}
+}
